@@ -28,24 +28,70 @@ function UserInfo(props) {
   );
 }
 
-
-function Comment(props) {
+function Date(){
   return (
-    <div className="Comment">
-      <UserInfo user={props.author} />
-      <div className="Comment-text">
-      {props.text.newComment()}.      
-      </div>
-      <div className="Comment-date">
-        {formatDate(props.date)}
-      </div>
+    <div class="formatDate">
+      {props.date}
     </div>
-  )};
+  )
+}
+function month(props) {
+  return (
+    <div className="formatmonth">
+      <p =(props.month) "01"> January</p>
+    </div>
+  )
+}
 
-  function newCommnent(){
+function year(props) {
+  return (
+    <div className="formatyear">
+      <p>2018</p>
+    </div>
+  )
+}
+class Commentupdate extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { text: new newCommnent() };
+    this.state ={ date: new CreateDate};
+    this.state ={ month: new month};
+    this.state ={year: new year};
+    this.state ={getdate =CreateDate+month+year}
+  };
+
+  componentDidMount() {
+    this.newComment+CreateDate = SetCommmentDate(
+      () => this.getdate(),
+    );
+  }
+  }
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+
+    render() {
+      return (
+        <div className="Comment">
+          <UserInfo user={props.author} />
+          <div className="Comment-text">
+            {this.state.text.newComment()}.
+      </div>
+          <date></date>
+            {formatDate(props.day.month.year)}
+          </div>
+        </div>
+      );
+    };
+  }
+
+
+
+function newCommnent() {
   ReactDOM.render(
     element,
     <Comment text={new text()} />,
     document.getElementById('root')
   )
-}
+};
